@@ -7,13 +7,11 @@
 %column
 
 %{
-   private Token token(Token.T type)
-   {
+   private Token token(Token.T type) {
      return new Token(type, yyline, yycolumn);
    }
 
-   private Token token(Token.T type, Object val)
-   {
+   private Token token(Token.T type, Object val) {
      return new Token(type, val, yyline, yycolumn);
    }
 %}
