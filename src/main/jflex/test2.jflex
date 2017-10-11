@@ -1,7 +1,7 @@
 
 %%
 
-%class Lexer
+%class Lexer2
 %type Token
 %line
 %column

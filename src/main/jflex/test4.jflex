@@ -1,7 +1,7 @@
 
 %%
 
-%class Lexer
+%class Lexer4
 %type Token
 %line
 %column
@@ -47,7 +47,7 @@ if               { return token(Token.T.IF); }
 <STR> \\n        { str.append('\n'); }
 <STR> \\\"       { str.append('"'); }
 <STR> \\\\       { str.append('\\'); }
-<STR> [^\n\r\\]+ { str.append(yytext()); }
+<STR> [^\r\\]+   { str.append(yytext()); }
 <STR> <<EOF>>    { yybegin(YYINITIAL);
                    System.out.println("error: unclosed string literal");
                  }

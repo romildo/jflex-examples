@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
-public class Test2
+public class Test3
 {
   public static void main(String[] args)
   {
@@ -12,7 +12,7 @@ public class Test2
       Reader input = args.length > 0 ?
                      new FileReader(args[0]) :
                      new InputStreamReader(System.in);
-      Lexer2 scanner = new Lexer2(input);
+      Lexer3 scanner = new Lexer3(input);
       Token token;
       do
       {
