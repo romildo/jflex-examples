@@ -47,7 +47,7 @@ if               { return token(Token.T.IF); }
 <STR> \\n        { str.append('\n'); }
 <STR> \\\"       { str.append('"'); }
 <STR> \\\\       { str.append('\\'); }
-<STR> [^\r\n\\]+ { str.append(yytext()); }
+<STR> [^\r\n\"\\]+ { str.append(yytext()); }
 <STR> <<EOF>>    { yybegin(YYINITIAL);
                    System.out.println("error: unclosed string literal");
                  }
