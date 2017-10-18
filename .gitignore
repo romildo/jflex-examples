@@ -1,1 +1,10 @@
-# Created by .ignore support plugin (hsz.mobi)
+
+# -- Maven
+target/*
+
+# -- IntelliJ IDEA
+.idea
+*.iml
+
+# -- Emacs
+*~

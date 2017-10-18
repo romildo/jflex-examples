@@ -1,0 +1,9 @@
+terminal IF;
+terminal String ID;
+terminal Long INT;
+terminal Double FLOAT;
+terminal String STR;
+
+non terminal prog;
+
+prog ::= ;

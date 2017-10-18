@@ -49,9 +49,7 @@ if              { return token(Token.T.IF); }
 <<EOF>>         { yybegin(YYINITIAL);
                   System.err.println("error: unclosed comment");
                 }
-.|\n            { }
+[^]             { }
 }
 
-.|\n            { System.err.printf("error: unexpected char |%s|\n",
-                                    yytext());
-                }
+[^]             { System.err.printf("error: unexpected char |%s|\n", yytext()); }

@@ -3,14 +3,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
-public class Test2 {
+public class Test5 {
    public static void main(String[] args) {
       try {
          Reader input =
             args.length > 0 ?
                new FileReader(args[0]) :
                new InputStreamReader(System.in);
-         Lexer2 scanner = new Lexer2(input);
+         Lexer5 scanner = new Lexer5(input);
          Token token;
          do {
             token = scanner.yylex();

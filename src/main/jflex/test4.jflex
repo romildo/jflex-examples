@@ -47,11 +47,9 @@ if               { return token(Token.T.IF); }
 <STR> \\n        { str.append('\n'); }
 <STR> \\\"       { str.append('"'); }
 <STR> \\\\       { str.append('\\'); }
-<STR> [^\r\\]+   { str.append(yytext()); }
+<STR> [^\r\n\\]+ { str.append(yytext()); }
 <STR> <<EOF>>    { yybegin(YYINITIAL);
                    System.out.println("error: unclosed string literal");
                  }
 
-.|\n             { System.out.printf("error: unexpected char |%s|\n",
-                                     yytext());
-                 }
+[^]              { System.out.printf("error: unexpected char |%s|\n", yytext()); }
