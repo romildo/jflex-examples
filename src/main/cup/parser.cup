@@ -1,6 +1,6 @@
-terminal IF;
+terminal        IF;
 terminal String ID;
-terminal Long INT;
+terminal Long   INT;
 terminal Double FLOAT;
 terminal String STR;
 

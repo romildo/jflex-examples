@@ -38,6 +38,7 @@ if              { return token(Token.T.IF); }
                 }
 [ \t\n\r]+      { /* do nothing */ }
 <<EOF>>         { return token(Token.T.EOF); }
+.               { System.out.printf("error: unexpected char |%s|\n", yytext()); }
 }
 
 <COMMENT> {
@@ -47,9 +48,7 @@ if              { return token(Token.T.IF); }
                 }
 "/*"            { commentLevel ++; }
 <<EOF>>         { yybegin(YYINITIAL);
-                  System.err.println("error: unclosed comment");
+                  System.out.println("error: unclosed comment");
                 }
 [^]             { }
 }
-
-[^]             { System.err.printf("error: unexpected char |%s|\n", yytext()); }

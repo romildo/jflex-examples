@@ -22,7 +22,7 @@ import java_cup.runtime.Symbol;
  
 if             { return token(IF); }
 [a-z][a-z0-9]* { return token(ID, yytext()); }
-[0-9]+         { return token(INT, new Integer(yytext())); }
+[0-9]+         { return token(INT, new Long(yytext())); }
 [0-9]+"."[0-9]*|[0-9]*"."[0-9]+
                { return token(FLOAT, new Double(yytext())); }
 [ \t\n\r]+     { /* do nothing */ }
